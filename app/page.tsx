@@ -136,9 +136,9 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8 grid lg:grid-cols-12 gap-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         {/* Sidebar Controls */}
-        <div className="lg:col-span-4 space-y-6">
+        <div className="lg:col-span-4 space-y-5 sm:space-y-6">
           <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">
               Content
@@ -149,7 +149,7 @@ export default function Home() {
                   <i className="fa-solid fa-wand-magic-sparkles"></i>
                   AI Smart Prompt
                 </label>
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input
                     type="text"
                     value={aiInput}
@@ -172,7 +172,10 @@ export default function Home() {
                       }
                     }}
                     disabled={isAiLoading}
-                    className="p-1 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-50"
+                    className="px-4 py-2 bg-indigo-600 text-white rounded-xl 
+hover:bg-indigo-700 disabled:opacity-50 
+flex items-center justify-center 
+min-w-[110px]"
                   >
                     {isAiLoading ? (
                       <span className="text-xs flex items-center gap-2 animate-spin">
@@ -195,7 +198,9 @@ export default function Home() {
                         onClick={() =>
                           setConfig({ ...config, data: s.content })
                         }
-                        className="w-full text-left p-2.5 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-transparent hover:border-indigo-200"
+                        className="w-full text-left p-3 sm:p-2.5 
+bg-slate-50 rounded-lg 
+active:scale-[0.98] transition"
                       >
                         <p className="text-xs font-bold text-slate-700">
                           {s.title}
