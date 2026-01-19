@@ -3,7 +3,6 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import QRCode from "qrcode";
 import { AIResponseItem } from "./types/ai";
 import { QRConfig } from "./types/qr";
-import { generateBaseQR } from "./lib/qr";
 
 export default function Home() {
   const [config, setConfig] = useState<QRConfig>({
@@ -178,13 +177,13 @@ flex items-center justify-center
 min-w-[110px]"
                   >
                     {isAiLoading ? (
-                      <span className="text-xs flex items-center gap-2 animate-spin">
-                        <i className="fa-solid fa-spinner animate-spin"></i>
-                        Thinking...
+                      <span className="text-xs flex items-center gap-2 whitespace-nowrap">
+                        <i className="fa-solid fa-spinner animate-spin text-sm"></i>
+                        <span>Thinking...</span>
                       </span>
                     ) : (
-                      <span className="text-xs flex items-center gap-2">
-                        Generate
+                      <span className="text-xs flex items-center gap-2 whitespace-nowrap">
+                        <span>Generate</span>
                         <i className="fa-solid fa-paper-plane"></i>
                       </span>
                     )}
